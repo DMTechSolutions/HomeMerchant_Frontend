@@ -1,0 +1,46 @@
+// app global css in SCSS form
+.anchor-tag {
+  cursor: pointer;
+  color: teal;
+}
+
+.primary-btn {
+  background-color: #007562;
+  color: #ffffff;
+  border-color: #007562;
+}
+
+.secondary-btn {
+  color: #007562;
+  background-color: #ffffff;
+  border: 1px solid #007562;
+}
+
+.continue-fb-btn {
+  color: #ffffff;
+  background-color: #4267b2;
+}
+
+.continue-google-btn {
+  color: #333333;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+}
+
+.TC-text {
+  font-size: 11px;
+  color: #333333;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.text-color {
+  color: #333333;
+  text-align: center;
+}
