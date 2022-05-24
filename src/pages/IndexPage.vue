@@ -1,4 +1,5 @@
 <template>
+<div>
   <q-page class="gt-sm">
     <div class="row" style="height: 900px">
       <div class="bg-image col" style="max-width: 1000px">
@@ -276,19 +277,20 @@
       </div>
     </div>
   </q-page>
+  </div>
 </template>
 
 <script>
-import { defineComponent } from 'vue';
-import ContinueWithGoogle from 'components/ContinueWithGoogle.vue';
+import { defineComponent } from 'vue'
+import ContinueWithGoogle from 'components/ContinueWithGoogle.vue'
 
 export default defineComponent({
   name: 'IndexPage',
 
   components: {
-    ContinueWithGoogle,
-  },
-});
+    ContinueWithGoogle
+  }
+})
 </script>
 
 <style>

@@ -3,11 +3,11 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent } from 'vue'
 
 export default defineComponent({
-  name: 'App',
-});
+  name: 'App'
+})
 </script>
 <style>
 ::-webkit-scrollbar {
@@ -27,7 +27,6 @@ export default defineComponent({
 .my-sticky-header-column-table
   /* height or max-height is important */
   height: 450px
-
 
   tr th
     position: sticky

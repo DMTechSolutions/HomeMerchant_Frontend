@@ -3,6 +3,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "allowJs": true,
+    "jsx": "preserve",
     "paths": {
       "src/*": ["src/*"],
       "app/*": ["*"],
@@ -13,6 +14,9 @@
       "boot/*": ["src/boot/*"],
       "stores/*": ["src/stores/*"]
     }
+  },
+  "vueCompilerOptions" : {
+    "experimentalDisableTemplateSupport" : true
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
   "references": [

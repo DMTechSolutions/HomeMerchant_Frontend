@@ -1,4 +1,5 @@
 <template>
+<div>
   <q-layout view="hHh lpR fff" class="gt-sm">
     <q-header class="bg-white">
       <q-toolbar>
@@ -92,7 +93,6 @@
                     <q-item-section side>
                       <q-icon name="mdi-menu-right" size="xs" />
                     </q-item-section>
-
                     <q-menu anchor="top end" self="top start">
                       <q-list>
                         <q-item v-for="n in 3" :key="n" dense clickable>
@@ -123,7 +123,6 @@
             <div class="text-h6 text-black">LLP COMPARATOR</div>
           </div>
         </div>
-
         <div class="row">
           <div>
             <q-btn round flat>
@@ -135,11 +134,11 @@
           <q-icon name="mdi-account" size="md" color="black" class="q-mr-xs" />
         </div>
       </div>
-
       <q-separator inset class="q-mb-lg" />
     </q-header>
     <q-page-container class="doc-container" style="">
       <router-view></router-view>
     </q-page-container>
   </q-layout>
+  </div>
 </template>

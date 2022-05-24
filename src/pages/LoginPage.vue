@@ -83,20 +83,20 @@
 </template>
 
 <script>
-import { ref } from 'vue';
-import ContinueWithFb from 'components/ContinueWithFb.vue';
-import ContinueWithGoogle from 'components/ContinueWithGoogle.vue';
+import { ref } from 'vue'
+import ContinueWithFb from 'components/ContinueWithFb.vue'
+import ContinueWithGoogle from 'components/ContinueWithGoogle.vue'
 
 export default {
-  setup() {
+  setup () {
     return {
-      checked: ref(true),
-    };
+      checked: ref(true)
+    }
   },
 
   components: {
     ContinueWithFb,
-    ContinueWithGoogle,
-  },
-};
+    ContinueWithGoogle
+  }
+}
 </script>

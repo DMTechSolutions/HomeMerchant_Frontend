@@ -10,9 +10,9 @@
 
 <script>
 export default {
-  //name: 'ContinueWithGoogle',
-  setup() {
-    return {};
-  },
-};
+  // name: 'ContinueWithGoogle',
+  setup () {
+    return {}
+  }
+}
 </script>

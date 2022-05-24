@@ -58,14 +58,14 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from 'vue';
-import { useQuasar } from 'quasar';
+import { defineComponent, ref } from 'vue'
+import { useQuasar } from 'quasar'
 
-import { useMutation } from '@vue/apollo-composable';
+import { useMutation } from '@vue/apollo-composable'
 
-import { loginMutation } from 'src/graphql/auth';
-import { useRouter } from 'vue-router';
-//import * as videoConstr from 'src/assets/virtual-construction-4895204-4127299.mp4';
+import { loginMutation } from 'src/graphql/auth'
+import { useRouter } from 'vue-router'
+// import * as videoConstr from 'src/assets/virtual-construction-4895204-4127299.mp4';
 
 interface Auth {
   email: string;
@@ -74,10 +74,10 @@ interface Auth {
 
 export default defineComponent({
   name: 'LoginPage',
-  setup() {
-    const router = useRouter();
-    function handleLogin() {
-      console.log('login');
+  setup () {
+    const router = useRouter()
+    function handleLogin () {
+      console.log('login')
 
       // const { mutate: login } = useMutation(
       //   loginMutation,
@@ -89,25 +89,25 @@ export default defineComponent({
 
       // login().then(({ data }: any) => {
       //    console.log(data);
-      localStorage.setItem('authToken', 'data.authData.accessToken');
+      localStorage.setItem('authToken', 'data.authData.accessToken')
       // push to strore all
       // push token to local strorge
       router.push({
-        name: 'Dashboard',
-      });
+        name: 'Dashboard'
+      })
       // });
     }
 
-    const $q = useQuasar();
-    const isPwd = ref(true);
-    const check = ref(true);
-    const loading = ref(false);
-    const variables = ref(null);
+    const $q = useQuasar()
+    const isPwd = ref(true)
+    const check = ref(true)
+    const loading = ref(false)
+    const variables = ref(null)
 
     const modelData = ref({
       email: '',
-      password: '',
-    });
+      password: ''
+    })
 
     return {
       $q,
@@ -117,10 +117,10 @@ export default defineComponent({
       variables,
       modelData,
 
-      handleLogin,
-    };
-  },
-});
+      handleLogin
+    }
+  }
+})
 </script>
 
 <style lang="scss" scoped>

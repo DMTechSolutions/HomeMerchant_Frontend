@@ -136,36 +136,36 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted, ref } from 'vue';
+import { defineComponent, onMounted, ref } from 'vue'
 // import fetchApi from 'src/feathers-client';
-import { useRouter } from 'vue-router';
+import { useRouter } from 'vue-router'
 
 export default defineComponent({
   name: 'DashboardPage',
 
-  setup() {
-    const router = useRouter();
+  setup () {
+    const router = useRouter()
     // const userId = ref(null);
-    const searchText = ref('');
-    const filter = ref('');
-    const pcount = ref('1');
-    const ccount = ref('0');
-    const hidetable = ref(true);
-    const blockClicked = ref('');
-    const projectNumber = ref(null);
-    const projectName = ref(null);
-    const SrNo = ref(null);
-    const count = ref(null);
-    const projLastUpdatedDate = ref(null);
-    const projcreatedDate = ref(null);
-    const list = ref(null);
-    const confirm = ref(false);
-    const pagination = ref({ rowsPerPage: 0 });
-    function newProject(): void {
-      console.log('Project');
+    const searchText = ref('')
+    const filter = ref('')
+    const pcount = ref('1')
+    const ccount = ref('0')
+    const hidetable = ref(true)
+    const blockClicked = ref('')
+    const projectNumber = ref(null)
+    const projectName = ref(null)
+    const SrNo = ref(null)
+    const count = ref(null)
+    const projLastUpdatedDate = ref(null)
+    const projcreatedDate = ref(null)
+    const list = ref(null)
+    const confirm = ref(false)
+    const pagination = ref({ rowsPerPage: 0 })
+    function newProject (): void {
+      console.log('Project')
       router.push({
-        name: 'Project',
-      });
+        name: 'Project'
+      })
     }
 
     const columns = [
@@ -175,28 +175,28 @@ export default defineComponent({
         label: 'Sr.No',
         align: 'left',
         field: 'Serial',
-        sortable: true,
+        sortable: true
       },
       {
         name: 'projectNumber',
         align: 'left',
         label: 'Project Number',
         field: 'projectNumber',
-        sortable: true,
+        sortable: true
       },
       {
         name: 'projectName',
         align: 'left',
         label: 'Project Name',
         field: 'projectName',
-        sortable: true,
+        sortable: true
       },
       {
         name: 'count',
         label: 'BOQ Count',
         align: 'left',
         field: 'count',
-        sortable: true,
+        sortable: true
       },
 
       {
@@ -204,7 +204,7 @@ export default defineComponent({
         align: 'left',
         label: 'PR DATE',
         field: 'projPrDate',
-        sortable: true,
+        sortable: true
       },
 
       {
@@ -212,37 +212,37 @@ export default defineComponent({
         align: 'left',
         label: 'Project Cost',
         field: 'prjcost',
-        sortable: true,
+        sortable: true
       },
       {
         name: 'LLP',
         align: 'left',
         label: 'LLP ',
         field: 'LLP',
-        sortable: true,
+        sortable: true
       },
       {
         name: 'minLLP',
         align: 'left',
         label: 'minLLP',
         field: 'minLLP',
-        sortable: true,
+        sortable: true
       },
       {
         name: 'avgLLP',
         align: 'left',
         label: 'AVG. LLP',
         field: 'avgLLP',
-        sortable: true,
+        sortable: true
       },
       {
         name: 'avgDiffLLP',
         align: 'left',
         label: 'Diff. Avg. LLP',
         field: 'avgDiffLLP',
-        sortable: true,
-      },
-    ];
+        sortable: true
+      }
+    ]
 
     const data = ref([
       {
@@ -255,15 +255,15 @@ export default defineComponent({
         LLP: 1687222,
         minLLP: 1658345,
         avgLLP: 1567431,
-        avgDiffLLP: -234551,
-      },
-    ]);
-    const msg = ref('');
+        avgDiffLLP: -234551
+      }
+    ])
+    const msg = ref('')
 
-    function showTableData(event: any) {
+    function showTableData (event: any) {
       // let projStatus = +event.currentTarget.id;
 
-      blockClicked.value = event.currentTarget.id;
+      blockClicked.value = event.currentTarget.id
       //  blockClicked=blockClicked === undefined ? "0":blockClicked;
       // let UserId = userId;
       // fetchApi
@@ -293,7 +293,7 @@ export default defineComponent({
       //   });
     }
 
-    function loadDashboardCount(): void {
+    function loadDashboardCount (): void {
       // const userId = 40;
 
       // fetchApi
@@ -307,8 +307,8 @@ export default defineComponent({
     }
 
     onMounted(() => {
-      loadDashboardCount();
-    });
+      loadDashboardCount()
+    })
 
     return {
       searchText,
@@ -331,10 +331,10 @@ export default defineComponent({
       list,
       ccount,
       pcount,
-      newProject,
-    };
-  },
-});
+      newProject
+    }
+  }
+})
 </script>
 
 <style lang="scss">
@@ -389,7 +389,6 @@ export default defineComponent({
     /* bg color is important for th; just specify one */
     background-color: #F5F5F5
     font-size : 18px
-
 
   thead tr th
     position: sticky
