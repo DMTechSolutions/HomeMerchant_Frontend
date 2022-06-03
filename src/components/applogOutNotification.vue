@@ -39,25 +39,25 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from 'vue';
+import { defineComponent, ref } from 'vue'
 
-import { useRouter } from 'vue-router';
-import userImage from 'src/assets/userImage.png';
+import { useRouter } from 'vue-router'
+import userImage from 'src/assets/userImage.png'
 
 export default defineComponent({
-  setup() {
-    const appLogout = ref(true);
-    const userId = ref('');
-    const ProfileName = ref('');
-    const router = useRouter();
-    function updateapplogout(): void {
-      localStorage.setItem('authToken', '');
+  setup () {
+    const appLogout = ref(true)
+    const userId = ref('')
+    const ProfileName = ref('')
+    const router = useRouter()
+    function updateapplogout (): void {
+      localStorage.setItem('authToken', '')
       router.push({
-        name: 'login',
-      });
+        name: 'login'
+      })
     }
 
-    return { appLogout, userImage, userId, ProfileName, updateapplogout };
-  },
-});
+    return { appLogout, userImage, userId, ProfileName, updateapplogout }
+  }
+})
 </script>

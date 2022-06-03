@@ -4,7 +4,7 @@
     label="Continue as {{name}}"
     no-caps
     class="continue-google-btn q-mt-md"
-    style="width: 100%"
+    style="width: 100%; max-width: 320px;"
   />
 </template>
 

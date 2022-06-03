@@ -63,28 +63,28 @@
 </template>
 
 <script>
-import { EventBus } from '../event-bus';
+import { EventBus } from '../event-bus'
 
 export default {
-  data() {
+  data () {
     return {
       appHeader: false,
-      activeBtn: false,
-    };
+      activeBtn: false
+    }
   },
 
   methods: {
-    updateAnalysisHeader() {
+    updateAnalysisHeader () {
       //  console.log(name);
-      this.activeBtn = 'Analysis';
+      this.activeBtn = 'Analysis'
 
-      EventBus.$emit('headerName', 'Analysis');
+      EventBus.$emit('headerName', 'Analysis')
     },
-    updateAppheaderName(name) {
+    updateAppheaderName (name) {
       // console.log("bale",name );
       //  this.activeBtn =this.label;
       //  this.$store.dispatch("appStateStore/updateHeaderName", name);
-    },
+    }
   },
 
   // mounted() {
@@ -92,14 +92,14 @@ export default {
 
   //   console.log("mounted", this.appHeader);
   // },
-  mounted() {
+  mounted () {
     EventBus.$on('headeData', (headerstate) => {
-      this.appHeader = headerstate;
-    });
+      this.appHeader = headerstate
+    })
     EventBus.$on('headerActive', (headerstate) => {
-      this.activeBtn = headerstate;
-    });
-  },
+      this.activeBtn = headerstate
+    })
+  }
   // watch: {
 
   //   appHeader: function (newAppstate, oldAppState) {
@@ -110,7 +110,7 @@ export default {
   //     console.log("watch", newAppstate, oldAppState);
   //   }
   // }
-};
+}
 </script>
 
 <style scoped>

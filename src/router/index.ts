@@ -34,7 +34,7 @@ export default route(function (/* { store, ssrContext } */) {
     history: createHistory(process.env.VUE_ROUTER_BASE)
   })
 
-  Router.beforeEach((to, from, next) => {
+  /* Router.beforeEach((to, from, next) => {
     console.log(to, from, '', localStorage.getItem('authToken'))
 
     if (localStorage.getItem('authToken')) {
@@ -51,7 +51,7 @@ export default route(function (/* { store, ssrContext } */) {
       }
       // next('/login');
     }
-  })
+  }) */
 
   return Router
 })

@@ -6,9 +6,9 @@ const routes: RouteRecordRaw[] = [
     component: () => import('layouts/MainLayout.vue'),
     children: [
       {
-        path: '/Dashboard',
-        name: 'Dashboard',
-        component: () => import('pages/Dashboard.vue')
+        path: '/',
+        name: 'home',
+        component: () => import('pages/LandingPage.vue')
       },
       {
         path: '/Project',
@@ -18,7 +18,22 @@ const routes: RouteRecordRaw[] = [
       {
         path: '/login',
         name: 'login',
-        component: () => import('pages/IndexPage.vue')
+        component: () => import('pages/LoginPage.vue')
+      },
+      {
+        path: '/register',
+        name: 'register',
+        component: () => import('pages/RegistrationPage.vue')
+      },
+      {
+        path: '/seller',
+        name: 'seller',
+        component: () => import('pages/SellerPage.vue')
+      },
+      {
+        path: '/buyer',
+        name: 'buyer',
+        component: () => import('pages/BuyerPage.vue')
       }
     ]
   },

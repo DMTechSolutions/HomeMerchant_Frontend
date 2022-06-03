@@ -19,7 +19,7 @@
                     class="text-black align-center text-bold"
                     style="font-weight: 800"
                   >
-                    LLP COMPARATOR
+                    Home Merchant
                   </q-item-label>
                 </q-item-section>
               </q-item>
@@ -39,8 +39,9 @@
                 size="xs"
                 color="black"
                 class="q-mr-xs"
+                @click="handleLogin"
               />
-              Sign In
+              <router-link to="/login">Sign In</router-link>
             </q-btn>
             <q-btn class="text-black" flat no-caps>
               <q-icon
@@ -120,7 +121,7 @@
             </q-btn>
           </div>
           <div class="row justify-center">
-            <div class="text-h6 text-black">LLP COMPARATOR</div>
+            <div class="text-h6 text-black">Home Merchant</div>
           </div>
         </div>
         <div class="row">
@@ -131,7 +132,9 @@
               </q-avatar>
             </q-btn>
           </div>
-          <q-icon name="mdi-account" size="md" color="black" class="q-mr-xs" />
+          <router-link to="/login" style="text-decoration: none; color: inherit;">
+            <q-icon name="mdi-account" size="md" color="black" class="q-mr-xs" />
+          </router-link>
         </div>
       </div>
       <q-separator inset class="q-mb-lg" />
@@ -142,3 +145,28 @@
   </q-layout>
   </div>
 </template>
+
+<script lang="ts">
+import { defineComponent } from 'vue'
+
+import { useRouter } from 'vue-router'
+
+export default defineComponent({
+  name: 'LoginPage',
+  setup () {
+    const router = useRouter()
+    function handleLogin () {
+      console.log('login')
+      alert('clicked')
+      router.push({
+        name: 'login'
+      })
+    }
+
+    return {
+
+      handleLogin
+    }
+  }
+})
+</script>
