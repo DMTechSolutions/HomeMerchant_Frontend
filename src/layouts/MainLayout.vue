@@ -1,172 +1,181 @@
 <template>
-<div>
-  <q-layout view="hHh lpR fff" class="gt-sm">
-    <q-header class="bg-white">
+  <q-layout view="lHh Lpr lFf">
+    <q-header>
       <q-toolbar>
-        <div class="row full-width" style="align-items: center">
-          <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2 flex row center">
-            <q-list borderless padding>
-              <q-item>
-                <q-item-section top avatar>
-                  <q-avatar
-                    color="primary"
-                    text-color="white"
-                    icon="mdi-home"
-                  />
-                </q-item-section>
-                <q-item-section>
-                  <q-item-label
-                    class="text-black align-center text-bold"
-                    style="font-weight: 800"
-                  >
-                    Home Merchant
-                  </q-item-label>
-                </q-item-section>
-              </q-item>
-            </q-list>
-          </div>
-          <div class="col-xs-12 col-sm-6 col-md-4 col-lg-8">
-            <q-input dense filled type="search" placeholder="search">
-              <template v-slot:append>
-                <q-icon name="mdi-magnify" />
-              </template>
-            </q-input>
-          </div>
-          <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
-            <q-btn class="text-black" flat no-caps>
-              <q-icon
-                name="mdi-account"
-                size="xs"
-                color="black"
-                class="q-mr-xs"
-                @click="handleLogin"
-              />
-              <router-link to="/login">Sign In</router-link>
-            </q-btn>
-            <q-btn class="text-black" flat no-caps>
-              <q-icon
-                name="mdi-briefcase-account"
-                size="xs"
-                color="black"
-                class="q-mr-xs"
-              />
-              Join in as Pro
-            </q-btn>
-          </div>
+        <q-toolbar-title>
+          <q-img
+            src="../assets/homerchant-logo.png"
+            style="height: 80px; width: 100px"
+          />
+        </q-toolbar-title>
+
+        <q-btn
+          flat
+          dense
+          round
+          icon="menu"
+          aria-label="Menu"
+          @click="toggleLeftDrawer"
+          class="md-and-up-hide"
+        />
+
+        <div class="xs-hide sm-hide">
+          <q-btn
+            flat
+            dense
+            no-caps
+            label="Home"
+            @click="goToSection('heroSection')"
+            class="q-mx-sm"
+          />
+          <q-btn
+            flat
+            dense
+            no-caps
+            label="Features"
+            @click="goToSection('features')"
+            class="q-mx-sm"
+          />
+          <q-btn
+            flat
+            dense
+            no-caps
+            label="About"
+            @click="goToSection('about')"
+            class="q-mx-sm"
+          />
+          <q-btn
+            dense
+            label="Login"
+            to="/login"
+            v-if="!isAuthenticated"
+            flat
+            class="q-px-sm q-ml-md"
+          />
+          <q-btn
+            flat
+            dense
+            label="Dashboard"
+            v-if="isAuthenticated"
+            to="/admin"
+          />
+          <q-btn
+            flat
+            dense
+            label="Logout"
+            v-if="isAuthenticated"
+            @click="logout"
+          />
         </div>
       </q-toolbar>
+    </q-header>
 
-      <q-separator inset />
-    </q-header>
-    <q-separator />
-    <q-page-container class="doc-container" style="">
-      <router-view></router-view>
-    </q-page-container>
-    <q-footer style="bca">
-      <div class="row no-wrap items-center q-pa-xs rounded-borders">
-        <q-img class="q-ml-sm q-mt-xs" style="width: 4%; height: 1%" />
-        <q-space></q-space>
-        <div class="text-caption q-mr-md">
-          <q-icon
-            class="cursor-pointer q-pr-md items-center"
-            size="1.4em"
-            name="mdi-email"
-          ></q-icon
-          >Email Us your feedback
+    <q-drawer v-model="leftDrawerOpen" bordered>
+      <q-list>
+        <q-item-label header> Essential Links </q-item-label>
+        <q-item clickable @click="navigate('heroSection')">
+          <q-item-section>
+            <q-item-label>Home</q-item-label>
+          </q-item-section>
+        </q-item>
+        <q-item clickable @click="navigate('features')">
+          <q-item-section>
+            <q-item-label>Features</q-item-label>
+          </q-item-section>
+        </q-item>
+        <q-item clickable @click="navigate('about')">
+          <q-item-section>
+            <q-item-label>About</q-item-label>
+          </q-item-section>
+        </q-item>
+        <q-item clickable v-if="!isAuthenticated" to="/login">
+          <q-item-section>
+            <q-item-label>Login</q-item-label>
+          </q-item-section>
+        </q-item>
+        <q-item clickable v-if="isAuthenticated" to="/admin">
+          <q-item-section>
+            <q-item-label>About</q-item-label>
+          </q-item-section>
+        </q-item>
+        <q-item clickable v-if="isAuthenticated" @click="logout">
+          <q-item-section>
+            <q-item-label>About</q-item-label>
+          </q-item-section>
+        </q-item>
+      </q-list>
+    </q-drawer>
+
+    <q-page-container>
+      <router-view />
+      <q-toolbar
+        class="flex flex-center text-white"
+        style="border-top: 2px solid #0cbcbc; background-color: #263238"
+      >
+        <div class="q-pa-md q-gutter-sm">
+          <q-btn
+            round
+            type="a"
+            href="https://www.instagram.com/joabson_arley/"
+            class="bg-primary text-white"
+            icon="fab fa-instagram"
+            target="_blank"
+          />
+          <q-btn
+            round
+            type="a"
+            href="https://github.com/joabsonlg/"
+            class="bg-primary text-white"
+            icon="fab fa-github"
+            target="_blank"
+          />
+          <q-btn
+            round
+            type="a"
+            href="#"
+            class="bg-primary text-white"
+            icon="fab fa-twitter"
+          />
+          <q-btn
+            round
+            type="a"
+            href="#"
+            class="bg-primary text-white"
+            icon="email"
+          />
+          <q-btn
+            round
+            type="a"
+            href="#"
+            class="bg-primary text-white"
+            icon="fas fa-heart"
+          />
         </div>
-      </div>
-    </q-footer>
-  </q-layout>
-  <q-layout view="hHh lpR fff" class="lt-md">
-    <q-header class="bg-white">
-      <div class="row justify-between q-mt-md">
-        <div class="row justify-start">
-          <div>
-            <q-btn flat icon="mdi-menu" color="black">
-              <q-menu>
-                <q-list dense style="min-width: 100px">
-                  <q-item clickable v-close-popup>
-                    <q-item-section>Advice</q-item-section>
-                  </q-item>
-                  <q-separator />
-                  <q-item clickable>
-                    <q-item-section>Preferences</q-item-section>
-                    <q-item-section side>
-                      <q-icon name="mdi-menu-right" size="xs" />
-                    </q-item-section>
-                    <q-menu anchor="top end" self="top start">
-                      <q-list>
-                        <q-item v-for="n in 3" :key="n" dense clickable>
-                          <q-item-section>Submenu Label</q-item-section>
-                          <q-item-section side>
-                            <q-icon name="mdi-menu-right" size="xs" />
-                          </q-item-section>
-                          <q-menu auto-close anchor="top end" self="top start">
-                            <q-list>
-                              <q-item v-for="n in 3" :key="n" dense clickable>
-                                <q-item-section>3rd level Label</q-item-section>
-                              </q-item>
-                            </q-list>
-                          </q-menu>
-                        </q-item>
-                      </q-list>
-                    </q-menu>
-                  </q-item>
-                  <q-separator />
-                  <q-item clickable v-close-popup>
-                    <q-item-section>Quit</q-item-section>
-                  </q-item>
-                </q-list>
-              </q-menu>
-            </q-btn>
-          </div>
-          <div class="row justify-center">
-            <div class="text-h6 text-black">Home Merchant</div>
-          </div>
-        </div>
-        <div class="row">
-          <div>
-            <q-btn round flat>
-              <q-avatar size="42px">
-                <q-icon name="mdi-magnify" color="black" size="md" />
-              </q-avatar>
-            </q-btn>
-          </div>
-          <router-link to="/login" style="text-decoration: none; color: inherit;">
-            <q-icon name="mdi-account" size="md" color="black" class="q-mr-xs" />
-          </router-link>
-        </div>
-      </div>
-      <q-separator inset class="q-mb-lg" />
-    </q-header>
-    <q-page-container class="doc-container" style="">
-      <router-view></router-view>
+      </q-toolbar>
     </q-page-container>
   </q-layout>
-  </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script setup>
+import { computed, ref } from "vue";
+import { useAuthStore } from "stores/all";
+import { goToSection } from "src/support/helpers/scroll";
 
-import { useRouter } from 'vue-router'
+const $store = useAuthStore();
 
-export default defineComponent({
-  name: 'LoginPage',
-  setup () {
-    const router = useRouter()
-    function handleLogin () {
-      console.log('login')
-      alert('clicked')
-      router.push({
-        name: 'login'
-      })
-    }
+const leftDrawerOpen = ref(false);
 
-    return {
+const isAuthenticated = computed(() => $store.isAuthenticated);
 
-      handleLogin
-    }
-  }
-})
+const navigate = (section) => {
+  leftDrawerOpen.value = false;
+  setTimeout(() => {
+    goToSection(section);
+  }, 250);
+};
+
+const toggleLeftDrawer = () => (leftDrawerOpen.value = !leftDrawerOpen.value);
+const logout = () => {
+  $store.SIGN_OUT();
+};
 </script>
