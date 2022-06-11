@@ -24,6 +24,41 @@ export const authStore = defineStore("auth", {
       this.authenticated = true;
       this.blocked = isBlocked();
     },
+    async DO_SIGNUP(payload) {
+      console.log("payload " + payload);
+      await api
+        .post(
+          "http://localhost:3000/",
+          {
+            query: `mutation RegisterUser($registerInput: RegisterInput) {
+              registerUser(registerInput: $registerInput) {
+                userid
+                username
+                email
+                password
+                usertype
+              }
+            }`,
+            variables: JSON.stringify({
+              registerInput: {
+                username: payload.username,
+                email: payload.email,
+                password: payload.password,
+                usertype: 'seller'
+              },
+            }),
+          },
+          {
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        )
+        .then(async (response) => {
+          this.SET_TOKEN(response.data.data.loginUser.token);
+          await this.GET_USER(response.data.data.loginUser.token);
+        });
+    },
     async DO_LOGIN(payload) {
       console.log("payload " + payload);
       await api
@@ -41,8 +76,8 @@ export const authStore = defineStore("auth", {
               }`,
             variables: JSON.stringify({
               loginInput: {
-                email: "ram@lavar.com",
-                password: "12345",
+                email: payload.username,
+                password: payload.password,
               },
             }),
           },

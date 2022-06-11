@@ -23,11 +23,11 @@
                   v-bind="$input"
                 />
                 <q-input
-                  v-model="user.username"
+                  v-model="user.email"
                   :rules="[rules.required]"
                   label="Email"
                   lazy-rules
-                  name="username"
+                  name="email"
                   v-bind="$input"
                 />
                 <q-input
@@ -35,15 +35,15 @@
                   :rules="[rules.required, rules.minLength(6)]"
                   label="Select password"
                   lazy-rules
-                  name="password"
+                  name="select_password"
                   v-bind="$input"
                 />
                 <q-input
-                  v-model="user.password"
+                  v-model="user.confirmpassword"
                   :rules="[rules.required, rules.minLength(6)]"
                   label="Confirm password"
                   lazy-rules
-                  name="password"
+                  name="confirm_password"
                   v-bind="$input"
                 />
                 <q-select
@@ -91,7 +91,7 @@ const loading = computed(() => $commonStore.isLoading);
 const submitForm = async () => {
   try {
     $commonStore.ADD_REQUEST();
-    await $authStore.DO_LOGIN(user);
+    await $authStore.DO_SIGNUP(user);
     const to = $route.query.to?.toString();
     $router.push(to || "/admin");
   } catch (error) {
