@@ -72,7 +72,7 @@
 
     <q-drawer v-model="leftDrawerOpen" bordered>
       <q-list>
-        <q-item-label header> Essential Links </q-item-label>
+        <q-item-label header>Homerchant </q-item-label>
         <q-item clickable @click="navigate('heroSection')">
           <q-item-section>
             <q-item-label>Home</q-item-label>
@@ -116,7 +116,7 @@
           <q-btn
             round
             type="a"
-            href="https://www.instagram.com/joabson_arley/"
+            href=""
             class="bg-primary text-white"
             icon="fab fa-instagram"
             target="_blank"
@@ -124,7 +124,7 @@
           <q-btn
             round
             type="a"
-            href="https://github.com/joabsonlg/"
+            href=""
             class="bg-primary text-white"
             icon="fab fa-github"
             target="_blank"

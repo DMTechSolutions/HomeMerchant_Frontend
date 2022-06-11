@@ -13,7 +13,7 @@
 
         <q-toolbar-title>
           <router-link to="/" style="text-decoration: none; cursor: pointer" class="text-white">
-            System Name
+            Homerchant
           </router-link>
         </q-toolbar-title>
 
@@ -39,7 +39,7 @@
         <q-item-label
           header
         >
-          Essential Links
+          Homerchant
         </q-item-label>
 
         <EssentialLink

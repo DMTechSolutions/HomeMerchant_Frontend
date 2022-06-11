@@ -1,5 +1,5 @@
 <template>
-  <q-page style="margin-top: 10px">
+  <q-page style="margin-top: 10px; max-width: 99%; margin: auto;">
    <div class="row justitv-center">
     <div class="stack-item" v-for="(image, i) in images" :key="i">
        <img class="img" :src="image.urls.small" :alt="image.alt_description" />
@@ -73,6 +73,6 @@ export default {
   flex-direction: row;
   flex-wrap: wrap;
   max-width: fit-content;
-
+  margin: 2px;
 }
 </style>

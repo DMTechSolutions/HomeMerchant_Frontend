@@ -65,7 +65,8 @@ import { useRoute, useRouter } from "vue-router";
 import rules from "src/support/rules/fieldRules";
 import { handleErros } from "src/support/errors/handleErros";
 import { useAuthStore, useCommonStore } from "stores/all";
-
+import CancelAction from '../../../components/Cancel.vue';
+components: { CancelAction }
 const $authStore = useAuthStore();
 const $commonStore = useCommonStore();
 const $router = useRouter();
