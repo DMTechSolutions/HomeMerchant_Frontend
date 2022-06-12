@@ -7,8 +7,7 @@
             <q-card-section>
               <div class="q-mb-xl">
                 <div class="flex justify-center">
-                  <div
-                    class="text-h4 no-caps q-my-none text-weight-bold text-primary fredoka"
+                  <div class="text-h4 no-caps q-my-none text-weight-bold text-primary fredoka"
                   >
                     Sign Up
                   </div>

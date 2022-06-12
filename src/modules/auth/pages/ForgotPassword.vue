@@ -10,10 +10,10 @@
               class="text-h4 text-uppercase text-white fredoka"
               style="min-width: 220px"
             >
-              Esqueceu a senha?
+              Forgot password?
             </div>
             <div class="text-white q-my-sm text-subtitle1">
-              Informe seu e-mail para enviarmos o link de redefinição da senha!
+              Enter your email and we'll send you the password reset link!
             </div>
           </div>
         </div>
@@ -25,7 +25,8 @@
               class="text-primary"
               style="text-decoration: none"
               to="/"
-              >System Name
+              >
+              Homerchant
             </router-link>
           </div>
         </div>
@@ -37,7 +38,7 @@
                   <div
                     class="text-h4 text-uppercase q-my-none text-primary fredoka"
                   >
-                    Resetar senha
+                    Reset password
                   </div>
                 </div>
               </div>
@@ -63,7 +64,6 @@
                   ></q-btn>
                   <div class="q-mt-lg">
                     <div class="q-mt-sm">
-                      Realizar
                       <router-link class="text-primary" to="/login"
                         >Login</router-link
                       >

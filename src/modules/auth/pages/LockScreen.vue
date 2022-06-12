@@ -4,14 +4,14 @@
       <div class="col-0 col-sm-5 bg-primary rounded-left-borders">
         <div class="row q-ml-sm q-mt-sm">
           <div class="col-12 fredoka text-subtitle1">
-            <router-link class="text-white" style="text-decoration: none" to="/">System name
+            <router-link class="text-white" style="text-decoration: none" to="/">Homerchant
             </router-link>
           </div>
         </div>
         <div class="row full-width q-px-xl q-pb-xl full-height flex flex-center">
           <div>
             <div class="text-h4 text-uppercase text-white fredoka" style="min-width: 220px">Opss!</div>
-            <div class="text-white q-my-sm text-subtitle1">Sua sessão expirou. Informe sua senha senha para desbloquear.
+            <div class="text-white q-my-sm text-subtitle1">Your session has expired. Enter your password to unlock.
             </div>
           </div>
         </div>
@@ -19,7 +19,7 @@
       <div class="col-12 col-sm-7">
         <div class="row q-ml-sm q-mt-sm sm-and-up-hide">
           <div class="col-12 fredoka text-subtitle1">
-            <router-link class="text-primary" style="text-decoration: none" to="/">System Name
+            <router-link class="text-primary" style="text-decoration: none" to="/">Homerchant
             </router-link>
           </div>
         </div>
@@ -50,7 +50,7 @@
                 <q-btn :loading="loading" class="text-capitalize full-width" color="primary" label="Desbloquear" push
                        type="submit"></q-btn>
                 <div class="q-mt-sm">
-                  <a class="text-primary" href="#" @click="signOut">Entrar com outro usuário</a>
+                  <a class="text-primary" href="#" @click="signOut">Login with another user</a>
                 </div>
               </q-card-actions>
             </q-form>

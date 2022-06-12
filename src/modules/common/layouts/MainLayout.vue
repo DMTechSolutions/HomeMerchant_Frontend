@@ -13,7 +13,7 @@
           v-if="isSeller"
         />
         <div class="text-white fredoka text-h6">
-          <router-link class="text-primary q-mx-lg" style="text-decoration: none" to="/">System Name
+          <router-link class="text-primary q-mx-lg" style="text-decoration: none" to="/">Homerchant
           </router-link>
         </div>
         <q-space/>

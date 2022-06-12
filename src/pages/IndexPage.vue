@@ -5,6 +5,16 @@
        <img class="img" :src="image.urls.small" :alt="image.alt_description" />
       </div>
     </div>
+     <q-page-sticky position="bottom-right" :offset="[18, 18]">
+            <q-fab
+              icon="add"
+              direction="up"
+              color="accent"
+            >
+              <q-fab-action @click="onClick" color="primary" icon="person_add">
+              </q-fab-action>
+            </q-fab>
+          </q-page-sticky>
   </q-page>
 </template>
 
@@ -72,7 +82,11 @@ export default {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  max-width: fit-content;
-  margin: 2px;
+  max-width: 99%;
+  margin: 2px 2px 2px 2px;
+}
+
+.img {
+  max-width: 100%;
 }
 </style>
