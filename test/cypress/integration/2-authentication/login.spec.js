@@ -11,12 +11,12 @@ describe('login', () => {
 
   it('should logout', () => {
     cy.get('#logout-button').click();
-    cy.url().should('not.include', '/admin');
+    cy.url().should('not.include', '/seller');
   });
 
   it('should fail to login', () => {
     cy.visit('/#/login');
-    cy.get('input[name=username]').type('admin');
+    cy.get('input[name=username]').type('seller');
     cy.get('input[name=password]').type('wrong');
     cy.get('button[type=submit]').click();
     cy.url().should('include', '/login');

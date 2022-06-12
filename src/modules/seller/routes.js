@@ -1,6 +1,6 @@
 export default [
   {
-    path: '/admin',
+    path: '/seller',
     component: () => import('./layouts/MainLayout.vue'),
     children: [{
       name: 'Admin Dashboard',

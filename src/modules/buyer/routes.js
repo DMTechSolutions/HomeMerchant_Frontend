@@ -1,6 +1,6 @@
 export default [
   {
-    path: '/common',
+    path: '/buyer',
     component: () => import('./layouts/MainLayout.vue'),
     children: [{
       name: 'common',

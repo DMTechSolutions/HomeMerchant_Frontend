@@ -1,6 +1,6 @@
-import {routes as commonRoutes} from 'src/modules/common';
+import {routes as commonRoutes} from 'src/modules/buyer';
 import {routes as authRoutes} from 'src/modules/auth';
-import {routes as adminRoutes} from 'src/modules/admin';
+import {routes as adminRoutes} from 'src/modules/seller';
 
 const routes = [
   {

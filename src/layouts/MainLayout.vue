@@ -72,7 +72,7 @@
 
     <q-drawer v-model="leftDrawerOpen" bordered>
       <q-list>
-        <q-item-label header>Homerchant </q-item-label>
+        <q-item-label header>Homerchant</q-item-label>
         <q-item clickable @click="navigate('heroSection')">
           <q-item-section>
             <q-item-label>Home</q-item-label>

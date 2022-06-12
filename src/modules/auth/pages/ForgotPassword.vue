@@ -93,7 +93,7 @@ const email = ref("");
 const loading = computed(() => $commonStore.isLoading);
 const submitForm = async () => {
   try {
-    $commonStore.commit("common/ADD_REQUEST");
+    $commonStore.commit("buyer/ADD_REQUEST");
     await $authStore("authentication/RESET_PASSWORD", { email: email.value });
     showPositive(
       "Um link para redefinir sua senha foi enviado para seu e-mail! O E-mail pode demorar alguns minutos para chegar."
@@ -101,7 +101,7 @@ const submitForm = async () => {
     loading.value = false;
   } catch (error) {
     handleErros(error);
-    $commonStore.commit("common/ADD_REQUEST");
+    $commonStore.commit("buyer/ADD_REQUEST");
   }
 };
 </script>

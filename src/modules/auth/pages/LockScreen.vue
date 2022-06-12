@@ -94,7 +94,7 @@ const submitForm = async () => {
       password: password.value
     })
     const to = $route.query.to
-    let rota = to || '/admin'
+    let rota = to || '/seller'
     $router.push({path: rota})
   } catch (error) {
     handleErros(error)
