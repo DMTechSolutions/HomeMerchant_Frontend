@@ -37,6 +37,7 @@ export const authStore = defineStore("auth", {
                 email
                 password
                 usertype
+                token
               }
             }`,
             variables: JSON.stringify({
@@ -44,7 +45,7 @@ export const authStore = defineStore("auth", {
                 username: payload.username,
                 email: payload.email,
                 password: payload.password,
-                usertype: 'seller'
+                usertype: 'buyer'
               },
             }),
           },
@@ -55,11 +56,10 @@ export const authStore = defineStore("auth", {
           }
         )
         .then(async (response) => {
-          this.SET_TOKEN(response.data.data.loginUser.token);
+          this.SET_TOKEN(response.data.data.registerUser.token);
         });
     },
     async DO_LOGIN(payload) {
-      console.log("payload " + payload);
       await api
         .post(
           "http://localhost:3000/",
@@ -88,15 +88,10 @@ export const authStore = defineStore("auth", {
         )
         .then(async (response) => {
           this.SET_TOKEN(response.data.data.loginUser.token);
-          if (response.data.data.loginUser.usertype === 'seller') {
-
-          } else {
-
-          }
         });
     },
     async GET_USER(token) {
-      await api.get("/api/v1/users/me/", { token: token }).then((response) => {
+      await api.get("", { token: token }).then((response) => {
         storage.setUser(response.data);
         this.user = response.data;
       });

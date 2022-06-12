@@ -35,7 +35,9 @@
             label="Features"
             @click="goToSection('features')"
             class="q-mx-sm"
-          />
+          >
+            <router-link to="/featurespage" />
+          </q-btn>
           <q-btn
             flat
             dense
@@ -43,7 +45,9 @@
             label="About"
             @click="goToSection('about')"
             class="q-mx-sm"
-          />
+          >
+            <router-link to="/about" />
+          </q-btn>
           <q-btn
             dense
             label="Login"
