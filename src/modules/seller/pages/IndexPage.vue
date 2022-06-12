@@ -2,7 +2,7 @@
   <q-page class="q-pa-sm">
     <q-card class="q-mt-sm">
       <q-card-section>
-        <div class="text-h6">Admin page</div>
+        <div class="text-h6">Seller</div>
       </q-card-section>
 
       <q-card-section class="q-pt-none">

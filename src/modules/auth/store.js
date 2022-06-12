@@ -56,7 +56,6 @@ export const authStore = defineStore("auth", {
         )
         .then(async (response) => {
           this.SET_TOKEN(response.data.data.loginUser.token);
-          await this.GET_USER(response.data.data.loginUser.token);
         });
     },
     async DO_LOGIN(payload) {
@@ -89,7 +88,11 @@ export const authStore = defineStore("auth", {
         )
         .then(async (response) => {
           this.SET_TOKEN(response.data.data.loginUser.token);
-          await this.GET_USER(response.data.data.loginUser.token);
+          if (response.data.data.loginUser.usertype === 'seller') {
+
+          } else {
+
+          }
         });
     },
     async GET_USER(token) {

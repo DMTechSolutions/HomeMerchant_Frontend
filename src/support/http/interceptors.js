@@ -12,7 +12,7 @@ export const addInterceptors = (Router) => {
     },
     async (error) => {
       commonStore.REMOVE_REQUEST()
-      if (!error.response) return Promise.reject(new Error('Falha de conexão, tente novamente mais tarde!'));
+      if (!error.response) return Promise.reject(new Error('Connection failed, try again later!'));
       if (error.response.status === 401) {
         if (Router.currentRoute.value.path.includes('lock')) return Promise.resolve()
         if (error.config.url.includes('refresh')) {
