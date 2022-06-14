@@ -25,7 +25,6 @@ export const authStore = defineStore("auth", {
       this.blocked = isBlocked();
     },
     async DO_SIGNUP(payload) {
-      console.log("payload " + payload);
       await api
         .post(
           "http://localhost:3000/",

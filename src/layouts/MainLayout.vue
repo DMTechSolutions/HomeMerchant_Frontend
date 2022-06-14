@@ -18,76 +18,23 @@
           @click="toggleLeftDrawer"
           class="md-and-up-hide"
         />
-
-        <div class="xs-hide sm-hide">
-          <q-btn
-            flat
-            dense
-            no-caps
-            label="Home"
-            @click="goToSection('heroSection')"
-            class="q-mx-sm"
-          />
-          <q-btn
-            flat
-            dense
-            no-caps
-            label="Features"
-            @click="goToSection('features')"
-            class="q-mx-sm"
-          >
-            <router-link to="/featurespage" />
-          </q-btn>
-          <q-btn
-            flat
-            dense
-            no-caps
-            label="About"
-            @click="goToSection('about')"
-            class="q-mx-sm"
-          >
-            <router-link to="/about" />
-          </q-btn>
-          <q-btn
-            dense
-            label="Login"
-            to="/login"
-            v-if="!isAuthenticated"
-            flat
-            class="q-px-sm q-ml-md"
-          />
-          <q-btn
-            flat
-            dense
-            label="Dashboard"
-            v-if="isAuthenticated"
-            to="/buyer"
-          />
-          <q-btn
-            flat
-            dense
-            label="Logout"
-            v-if="isAuthenticated"
-            @click="logout"
-          />
-        </div>
       </q-toolbar>
     </q-header>
 
     <q-drawer v-model="leftDrawerOpen" bordered>
       <q-list>
         <q-item-label header>Homerchant</q-item-label>
-        <q-item clickable @click="navigate('heroSection')">
+        <q-item to="/">
           <q-item-section>
             <q-item-label>Home</q-item-label>
           </q-item-section>
         </q-item>
-        <q-item clickable @click="navigate('features')">
+        <q-item to="/features">
           <q-item-section>
             <q-item-label>Features</q-item-label>
           </q-item-section>
         </q-item>
-        <q-item clickable @click="navigate('about')">
+        <q-item to="/about">
           <q-item-section>
             <q-item-label>About</q-item-label>
           </q-item-section>

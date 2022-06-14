@@ -58,7 +58,7 @@
                     :loading="loading"
                     class="full-width"
                     color="primary"
-                    label="Enviar"
+                    label="Submit"
                     rounded
                     type="submit"
                   ></q-btn>
@@ -96,7 +96,7 @@ const submitForm = async () => {
     $commonStore.commit("buyer/ADD_REQUEST");
     await $authStore("authentication/RESET_PASSWORD", { email: email.value });
     showPositive(
-      "Um link para redefinir sua senha foi enviado para seu e-mail! O E-mail pode demorar alguns minutos para chegar."
+      "A link to reset your password has been sent to your email! E-mail may take a few minutes to arrive."
     );
     loading.value = false;
   } catch (error) {

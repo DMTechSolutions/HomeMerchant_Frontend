@@ -7,9 +7,7 @@
       style="margin: auto; max-width: 480px"
     >
       <div class="flex justify-center">
-        <div
-          class="text-h4 no-caps q-my-none text-weight-bold text-primary fredoka q-mb-md"
-        >
+        <div class="text-h4 no-caps q-my-none text-weight-bold text-primary fredoka q-mb-md">
           Login
         </div>
       </div>
