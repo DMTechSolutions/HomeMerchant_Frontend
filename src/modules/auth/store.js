@@ -9,14 +9,12 @@ export const authStore = defineStore("auth", {
     token: "",
     authenticated: false,
     blocked: false,
-    profile: ''
   }),
   getters: {
     getUser: (state) => state.user,
     getUserToken: (state) => state.token,
     isAuthenticated: (state) => state.authenticated,
     isBlocked: (state) => state.blocked,
-    getProfile: (state) => state.profile,
   },
   actions: {
     SET_TOKEN(payload) {

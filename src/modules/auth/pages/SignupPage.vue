@@ -1,6 +1,5 @@
 <template>
   <div class="fit row wrap justify-center items-center content-center q-pl-sm q-pr-sm">
-    <component :is="CancelAction" />
       <div class="col-12 col-sm-12 col-md-8 col-lg-6 col-xl-4" style="max-width: 480px;">
         <div class="row q-pa-sm-sm q-pa-md">
           <div class="col-12">
@@ -62,6 +61,7 @@
                     no-caps
                     type="submit"
                   ></q-btn>
+                  <CancelBtn />
                 </div>
               </q-form>
             </q-card-section>
@@ -77,7 +77,7 @@ import { useRoute, useRouter } from "vue-router";
 import rules from "src/support/rules/fieldRules";
 import { handleErros } from "src/support/errors/handleErros";
 import { useAuthStore, useCommonStore } from "stores/all";
-import CancelAction from '../../../components/Cancel.vue';
+import CancelBtn from '../../../components/Cancel.vue'
 
 const $authStore = useAuthStore();
 const $commonStore = useCommonStore();
@@ -104,3 +104,4 @@ const submitForm = async () => {
   }
 };
 </script>
+

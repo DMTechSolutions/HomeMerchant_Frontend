@@ -37,6 +37,7 @@
             rounded
             type="submit"
           ></q-btn>
+          <CancelBtn />
           <div class="q-mt-lg">
             <div class="q-mt-sm">
               Don't have an account yet?
@@ -63,8 +64,8 @@ import { useRoute, useRouter } from "vue-router";
 import rules from "src/support/rules/fieldRules";
 import { handleErros } from "src/support/errors/handleErros";
 import { useAuthStore, useCommonStore } from "stores/all";
-import CancelAction from '../../../components/Cancel.vue';
-components: { CancelAction }
+import CancelBtn from '../../../components/Cancel.vue'
+
 const $authStore = useAuthStore();
 const $commonStore = useCommonStore();
 const $router = useRouter();
@@ -81,7 +82,7 @@ const submitForm = async () => {
     await $authStore.DO_LOGIN(user);
     const to = $route.query.to?.toString();
     console.log(user)
-    $router.push(to || "/seller");
+    await $router.push(to || "/seller");
   } catch (error) {
     $commonStore.REMOVE_REQUEST();
     handleErros(error);
