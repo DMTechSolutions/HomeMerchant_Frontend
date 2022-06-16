@@ -21,7 +21,10 @@
       </q-toolbar>
     </q-header>
 
-    <q-drawer v-model="leftDrawerOpen" bordered>
+    <q-drawer
+      side="right"
+      v-model="drawerRight"
+      bordered>
       <q-list>
         <q-item-label header>Homerchant</q-item-label>
         <q-item to="/">
@@ -109,7 +112,7 @@ import { goToSection } from "src/support/helpers/scroll";
 
 const $store = useAuthStore();
 
-const leftDrawerOpen = ref(false);
+const drawerRight = ref(false);
 
 const isAuthenticated = computed(() => $store.isAuthenticated);
 
@@ -120,7 +123,7 @@ const navigate = (section) => {
   }, 250);
 };
 
-const toggleLeftDrawer = () => (leftDrawerOpen.value = !leftDrawerOpen.value);
+const toggleLeftDrawer = () => (drawerRight.value = !drawerRight.value);
 const logout = () => {
   $store.SIGN_OUT();
 };
