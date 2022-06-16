@@ -52,7 +52,7 @@
       </q-list>
     </q-drawer>
 
-    <q-page-container style="background-color: lightgray">
+    <q-page-container style="background-color: #ffffff">
       <router-view />
       <q-toolbar
         class="flex flex-center text-white"

@@ -1,6 +1,7 @@
 <template>
   <q-page style="margin-top: 10px; max-width: 99%; margin: auto;">
    <div class="row justitv-center">
+     <SubscribeAndSignup />
     <div class="stack-item" v-for="(image, i) in images" :key="i">
        <img class="img" :src="image.urls.small" :alt="image.alt_description" />
       </div>
@@ -20,6 +21,7 @@
 
 <script>
 import axios from "axios";
+import SubscribeAndSignup from '../components/SubscribeAndSignup.vue'
 
 export default {
   name: "HomePage",
@@ -33,6 +35,9 @@ export default {
       isLoaded: false,
       columnNum: 0
     };
+  },
+  components: {
+    SubscribeAndSignup,
   },
   methods: {
     getImages(topic) {
@@ -83,10 +88,12 @@ export default {
   flex-direction: row;
   flex-wrap: wrap;
   max-width: 99%;
-  margin: 2px 2px 2px 2px;
+  margin: 10px 2px 10px 2px;
 }
 
 .img {
   max-width: 100%;
+  border-radius: 20px;
+
 }
 </style>
