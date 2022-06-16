@@ -1,6 +1,6 @@
 <template>
   <div class="fit row wrap justify-center items-center content-center q-pl-sm q-pr-sm">
-    <CancelAction />
+    <component :is="CancelAction" />
       <div class="col-12 col-sm-12 col-md-8 col-lg-6 col-xl-4" style="max-width: 480px;">
         <div class="row q-pa-sm-sm q-pa-md">
           <div class="col-12">
@@ -47,11 +47,11 @@
                   v-bind="$input"
                 />
                 <q-select
-                  v-model="user.profile"
                   :options="options"
                   label="Usertype"
                   name="usertype"
                   v-bind="$input"
+                  v-model="user.profile"
                 />
                 <div>
                   <q-btn
@@ -72,7 +72,7 @@
 </template>
 
 <script setup>
-import { computed, reactive } from "vue";
+import { computed, reactive, ref } from "vue";
 import { useRoute, useRouter } from "vue-router";
 import rules from "src/support/rules/fieldRules";
 import { handleErros } from "src/support/errors/handleErros";
@@ -86,19 +86,18 @@ const $route = useRoute();
 
 const user = reactive({});
 
-const userLogged = computed(() => $authStore.getUser);
-const loading = computed(() => $commonStore.isLoading);
+const optionsModel = ref(null)
 
-components: {
-  CancelAction
-}
+const options = [{ label: 'Seller', value: 'seller' }, { label: 'Buyer', value: 'buyer' }]
+
+const loading = computed(() => $commonStore.isLoading);
 
 const submitForm = async () => {
   try {
     $commonStore.ADD_REQUEST();
     await $authStore.DO_SIGNUP(user);
     const to = $route.query.to?.toString();
-    $router.push(to || "/seller");
+    await $router.push(to || "/seller");
   } catch (error) {
     $commonStore.REMOVE_REQUEST();
     handleErros(error);

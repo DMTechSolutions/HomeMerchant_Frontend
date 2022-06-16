@@ -80,6 +80,7 @@ const submitForm = async () => {
     $commonStore.ADD_REQUEST();
     await $authStore.DO_LOGIN(user);
     const to = $route.query.to?.toString();
+    console.log(user)
     $router.push(to || "/seller");
   } catch (error) {
     $commonStore.REMOVE_REQUEST();

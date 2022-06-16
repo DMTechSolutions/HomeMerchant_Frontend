@@ -68,27 +68,19 @@ const $router = useRouter()
 const essentialLinks = [
   {
     title: 'Lead',
-    caption: '',
-    icon: '',
-    link: ''
+    to: '/lead'
   },
   {
     title: 'Feed',
-    caption: '',
-    icon: '',
-    link: ''
+    to: '/lead'
   },
   {
     title: 'Catalog',
-    caption: '',
-    icon: '',
-    link: ''
+    to: '/lead'
   },
   {
     title: 'REG',
-    caption: '',
-    icon: '',
-    link: ''
+    to: '/lead'
   }
 ]
 

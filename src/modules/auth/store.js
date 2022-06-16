@@ -9,12 +9,14 @@ export const authStore = defineStore("auth", {
     token: "",
     authenticated: false,
     blocked: false,
+    profile: ''
   }),
   getters: {
     getUser: (state) => state.user,
     getUserToken: (state) => state.token,
     isAuthenticated: (state) => state.authenticated,
     isBlocked: (state) => state.blocked,
+    getProfile: (state) => state.profile,
   },
   actions: {
     SET_TOKEN(payload) {
@@ -27,7 +29,7 @@ export const authStore = defineStore("auth", {
     async DO_SIGNUP(payload) {
       await api
         .post(
-          "http://localhost:3000/",
+          "http://localhost:8080/",
           {
             query: `mutation RegisterUser($registerInput: RegisterInput) {
               registerUser(registerInput: $registerInput) {
@@ -44,7 +46,7 @@ export const authStore = defineStore("auth", {
                 username: payload.username,
                 email: payload.email,
                 password: payload.password,
-                usertype: 'buyer'
+                usertype: payload.profile.value
               },
             }),
           },
@@ -61,7 +63,7 @@ export const authStore = defineStore("auth", {
     async DO_LOGIN(payload) {
       await api
         .post(
-          "http://localhost:3000/",
+          "http://localhost:8080/",
           {
             query: `mutation Mutation($loginInput: LoginInput) {
                 loginUser(loginInput: $loginInput) {
@@ -87,6 +89,7 @@ export const authStore = defineStore("auth", {
         )
         .then(async (response) => {
           this.SET_TOKEN(response.data.data.loginUser.token);
+          this.user = response.data.data.loginUser;
         });
     },
     async GET_USER(token) {
