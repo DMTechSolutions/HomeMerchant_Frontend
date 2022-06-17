@@ -35,6 +35,7 @@
     margin: 15px 0;
     border: 1px solid #0cbcbc;
     border-radius: 10px;
+    max-width: 400px;
   }
 
   .s-header {

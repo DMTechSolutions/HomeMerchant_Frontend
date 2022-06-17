@@ -1,6 +1,6 @@
 <template>
-  <q-page style="margin-top: 10px; max-width: 99%; margin: auto;">
-   <div class="row justitv-center">
+  <q-page style="margin-top: 10px; max-width: 99%;">
+   <div class="row justify-center">
      <SubscribeAndSignup />
     <div class="stack-item" v-for="(image, i) in images" :key="i">
        <img class="img" :src="image.urls.small" :alt="image.alt_description" />
@@ -88,7 +88,7 @@ export default {
   flex-direction: row;
   flex-wrap: wrap;
   max-width: 99%;
-  margin: 10px 2px 10px 2px;
+  margin: 10px 5px;
 }
 
 .img {
