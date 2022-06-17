@@ -25,5 +25,6 @@
   .img {
     margin: 10px 2px;
     border-radius: 10px;
+    max-width: 99%;
   }
 </style>

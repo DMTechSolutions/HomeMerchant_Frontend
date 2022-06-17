@@ -8,7 +8,7 @@
             style="height: 80px; width: 80px"
           />
         </q-toolbar-title>
-
+        <SearchBar />
         <q-btn
           flat
           dense
@@ -109,6 +109,7 @@
 import { computed, ref } from "vue";
 import { useAuthStore } from "stores/all";
 import { goToSection } from "src/support/helpers/scroll";
+import SearchBar from '../components/Search.vue'
 
 const $store = useAuthStore();
 
