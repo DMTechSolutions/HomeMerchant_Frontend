@@ -36,6 +36,7 @@
     border: 1px solid #0cbcbc;
     border-radius: 10px;
     max-width: 400px;
+    max-height: 250px;
   }
 
   .s-header {

@@ -1,6 +1,6 @@
-import {routes as commonRoutes} from 'src/modules/buyer';
+import {routes as buyerRoutes} from 'src/modules/buyer';
 import {routes as authRoutes} from 'src/modules/auth';
-import {routes as adminRoutes} from 'src/modules/seller';
+import {routes as sellerRoutes} from 'src/modules/seller';
 
 const routes = [
   {
@@ -23,7 +23,7 @@ const routes = [
 
 export default [
   ...routes,
-  ...commonRoutes,
+  ...buyerRoutes,
   ...authRoutes,
-  ...adminRoutes
+  ...sellerRoutes
 ]

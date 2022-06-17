@@ -4,8 +4,8 @@
       <q-toolbar>
         <q-toolbar-title>
           <q-img
-            src="../assets/homerchant-logo.png"
-            style="height: 80px; width: 100px"
+            src="../../../assets/homerchant-logo.png"
+            style="height: 80px; width: 80px"
           />
         </q-toolbar-title>
 
@@ -69,6 +69,9 @@
         </div>
       </q-toolbar>
     </q-header>
+    <q-page-container>
+      <router-view/>
+    </q-page-container>
   </q-layout>
 </template>
 

@@ -86,8 +86,6 @@ const $route = useRoute();
 
 const user = reactive({});
 
-const optionsModel = ref(null)
-
 const options = [{ label: 'Seller', value: 'seller' }, { label: 'Buyer', value: 'buyer' }]
 
 const loading = computed(() => $commonStore.isLoading);
@@ -96,8 +94,13 @@ const submitForm = async () => {
   try {
     $commonStore.ADD_REQUEST();
     await $authStore.DO_SIGNUP(user);
-    const to = $route.query.to?.toString();
-    await $router.push(to || "/seller");
+    if (user.profile.value === 'seller') {
+      await $router.push("/seller");
+    } else if (user.profile.value === 'buyer'){
+      await $router.push("/buyer");
+    } else {
+      await $router.push("/");
+    }
   } catch (error) {
     $commonStore.REMOVE_REQUEST();
     handleErros(error);

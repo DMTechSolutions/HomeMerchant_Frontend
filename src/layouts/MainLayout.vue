@@ -5,7 +5,7 @@
         <q-toolbar-title>
           <q-img
             src="../assets/homerchant-logo.png"
-            style="height: 80px; width: 100px"
+            style="height: 80px; width: 80px"
           />
         </q-toolbar-title>
 
