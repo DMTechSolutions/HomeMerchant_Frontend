@@ -2,6 +2,13 @@
   <q-layout view="lHh Lpr lFf">
     <q-header elevated>
       <q-toolbar>
+        <q-toolbar-title>
+          <q-img
+            src="../../../assets/homerchant-logo.png"
+            style="height: 80px; width: 80px"
+          />
+        </q-toolbar-title>
+        <SearchBar />
         <q-btn
           flat
           dense
@@ -11,12 +18,6 @@
           @click="toggleLeftDrawer"
         />
 
-        <q-toolbar-title>
-          <router-link to="/" style="text-decoration: none; cursor: pointer" class="text-white">
-            Homerchant
-          </router-link>
-        </q-toolbar-title>
-
         <div>
           <q-btn
             flat
@@ -25,7 +26,6 @@
             to="/login"
             v-if="!isAuthenticated"
           />
-          <q-btn flat dense label="Logout" v-if="isAuthenticated" @click="logout" id="logout-button"/>
         </div>
       </q-toolbar>
     </q-header>
@@ -34,6 +34,7 @@
       v-model="leftDrawerOpen"
       bordered
       show-if-above
+      side="right"
     >
       <q-list>
         <q-item-label
@@ -41,12 +42,37 @@
         >
           Homerchant
         </q-item-label>
+        <q-item to="/lead">
+          <q-item-section>
+            <q-item-label>Lead</q-item-label>
+          </q-item-section>
+        </q-item>
+        <q-item to="/feed">
+          <q-item-section>
+            <q-item-label>Feed</q-item-label>
+          </q-item-section>
+        </q-item>
+        <q-item to="/catalog">
+          <q-item-section>
+            <q-item-label>Catalog</q-item-label>
+          </q-item-section>
+        </q-item>
+        <q-item to="/req">
+          <q-item-section>
+            <q-item-label>REQ</q-item-label>
+          </q-item-section>
+        </q-item>
+        <q-item clickable v-if="!isAuthenticated" to="/login">
+          <q-item-section>
+            <q-item-label>Login</q-item-label>
+          </q-item-section>
+        </q-item>
+        <q-item clickable v-if="isAuthenticated" @click="logout">
+          <q-item-section>
+            <q-item-label>Logout</q-item-label>
+          </q-item-section>
+        </q-item>
 
-        <EssentialLink
-          v-for="link in essentialLinks"
-          :key="link.title"
-          v-bind="link"
-        />
       </q-list>
     </q-drawer>
 
@@ -61,28 +87,10 @@ import {ref} from 'vue'
 import EssentialLink from 'components/EssentialLink.vue'
 import {useAuthStore} from "stores/all";
 import {useRouter} from "vue-router";
+import SearchBar from '../../../components/Search.vue'
 
 const $store = useAuthStore()
 const $router = useRouter()
-
-const essentialLinks = [
-  {
-    title: 'Lead',
-    to: '/lead'
-  },
-  {
-    title: 'Feed',
-    to: '/lead'
-  },
-  {
-    title: 'Catalog',
-    to: '/lead'
-  },
-  {
-    title: 'REG',
-    to: '/lead'
-  }
-]
 
 const isAuthenticated = $store.isAuthenticated
 
