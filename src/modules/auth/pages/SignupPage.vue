@@ -33,6 +33,7 @@
                   v-model="user.password"
                   :rules="[rules.required, rules.minLength(6)]"
                   label="Select password"
+                  type="password"
                   lazy-rules
                   name="select_password"
                   v-bind="$input"

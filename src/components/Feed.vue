@@ -69,6 +69,6 @@
 </script>
 <style scoped>
   .feed {
-    padding: 0 24px;
+    padding: 2px;
   }
 </style>
