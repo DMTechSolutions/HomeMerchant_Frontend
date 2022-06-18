@@ -4,6 +4,9 @@
       <FeedCompo page="japan" />
     </div>
     <FloatingButton />
+    <div v-if="addProduct">
+      <AddProduct />
+    </div>
   </q-page>
 </template>
 
@@ -20,6 +23,17 @@ const userToken = computed(() => authStore.getUserToken)
 // This request is to be intercepted when the token is invalid
 authStore.GET_USER(userToken.value.access)
   export default {
+  data() {
+    return {
+      addProduct: false,
+    }
+  },
+    methods: {
+      onClick () {
+        this.addProduct = true
+        alert("clicked --> " + this.addProduct)
+      }
+    },
     components: { FloatingButton, FeedCompo }
   }
 </script>

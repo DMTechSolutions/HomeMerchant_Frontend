@@ -5,13 +5,18 @@
       direction="up"
       color="accent"
     >
-      <q-fab-action @click="onClick" color="primary" icon="person_add">
+      <q-fab-action @click="onClick" label="Upload" label-position="left"  color="primary" icon="upload">
       </q-fab-action>
     </q-fab>
   </q-page-sticky>
 </template>
 <script>
   export default {
-    name: "FloatingButton"
+    name: "FloatingButton",
+    methods: {
+      onClick() {
+        alert("you clicked upload")
+      }
+    }
   }
 </script>
