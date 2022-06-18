@@ -1,17 +1,12 @@
 <template>
-  <q-input
-    :hidden="showSearch"
-    v-model="search"
-    dark
-    label-color="white"
-    type="search"
-    class="bg-primary"
-    color="white" />
-  <q-btn
-    flat rounded
-    icon="search"
-    color="white"
-    @click="toggleSearch"/>
+  <q-input rounded outlined standout bottom-slots v-model="text" placeholder="search" dense class="q-mt-lg">
+    <template v-slot:prepend>
+      <q-icon name="search" />
+    </template>
+    <template v-slot:append>
+      <q-icon v-if="text !== ''" name="close" @click="text = ''" class="cursor-pointer" />
+    </template>
+  </q-input>
 
 </template>
 
@@ -30,7 +25,9 @@
       return {
         search,
         showSearch,
-        toggleSearch
+        toggleSearch,
+        text: ref(''),
+        dense: ref(false)
       }
     }
   }

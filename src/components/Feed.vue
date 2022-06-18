@@ -70,5 +70,14 @@
 <style scoped>
   .feed {
     padding: 2px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .stack-item {
+    width: 46%;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
   }
 </style>

@@ -26,5 +26,6 @@
     margin: 10px 2px;
     border-radius: 10px;
     max-width: 100%;
+    object-fit: contain;
   }
 </style>

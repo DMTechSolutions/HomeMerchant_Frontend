@@ -1,7 +1,7 @@
 <template>
   <q-layout view="lHh Lpr lFf">
     <q-header elevated>
-      <q-toolbar>
+      <q-toolbar style="background-color: #ffffff">
         <q-toolbar-title>
           <q-img
             src="../../../assets/homerchant-logo.png"
@@ -15,6 +15,7 @@
           round
           icon="menu"
           aria-label="Menu"
+          class="text-black"
           @click="toggleLeftDrawer"
         />
 
