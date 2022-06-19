@@ -3,9 +3,9 @@
     <div class="images">
       <FeedCompo page="japan" />
     </div>
-    <FloatingButton />
+    <FloatingButton clicked="addProduct" />
     <div v-if="addProduct">
-      <AddProduct />
+      <AddProduct prompt="addProduct" />
     </div>
   </q-page>
 </template>

@@ -1,7 +1,7 @@
 <template>
   <q-layout view="lHh Lpr lFf">
     <q-header elevated>
-      <q-toolbar style="background-color: #ffffff">
+      <q-toolbar style="background-color: #9c615c">
         <q-toolbar-title>
           <q-img
             src="../../../assets/homerchant-logo.png"
@@ -85,7 +85,6 @@
 
 <script setup>
 import {ref} from 'vue'
-import EssentialLink from 'components/EssentialLink.vue'
 import {useAuthStore} from "stores/all";
 import {useRouter} from "vue-router";
 import SearchBar from '../../../components/Search.vue'

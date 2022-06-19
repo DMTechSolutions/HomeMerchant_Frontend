@@ -1,13 +1,6 @@
 <template>
   <q-page-sticky position="bottom-right" :offset="[18, 18]">
-    <q-fab
-      icon="add"
-      direction="up"
-      color="accent"
-    >
-      <q-fab-action @click="onClick" label="Upload" label-position="left"  color="primary" icon="upload">
-      </q-fab-action>
-    </q-fab>
+    <q-btn round color="red" icon="add" text-color="black" @click="onClick" style="border: 1px solid black" />
   </q-page-sticky>
 </template>
 <script>

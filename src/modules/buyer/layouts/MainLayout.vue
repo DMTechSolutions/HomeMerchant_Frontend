@@ -1,7 +1,7 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <q-header>
-      <q-toolbar style="background-color: #ffffff">
+    <q-header elevated>
+      <q-toolbar style="background-color: #9c615c">
         <q-toolbar-title>
           <q-img
             src="../../../assets/homerchant-logo.png"

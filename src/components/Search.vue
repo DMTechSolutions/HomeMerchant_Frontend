@@ -1,5 +1,5 @@
 <template>
-  <q-input rounded outlined standout bottom-slots v-model="text" placeholder="search" dense class="q-mt-lg">
+  <q-input rounded outlined standout bottom-slots v-model="text" placeholder="search" dense class="q-mt-lg text-black">
     <template v-slot:prepend>
       <q-icon name="search" />
     </template>
