@@ -31,7 +31,7 @@
 
         <q-card-actions align="right" class="text-primary">
           <q-btn flat label="Cancel" v-close-popup />
-          <q-btn flat label="Upload" v-close-popup />
+          <q-btn flat label="Upload" @click="upload" />
         </q-card-actions>
       </q-card>
     </q-dialog>
@@ -47,6 +47,10 @@ const model = ref(null)
 const optionModel = ref(null)
 
 const options = ['Buyer', 'Sellr']
+
+const upload = () => {
+  alert('cliked');
+}
 
 console.log('model ' + model.value);
 
