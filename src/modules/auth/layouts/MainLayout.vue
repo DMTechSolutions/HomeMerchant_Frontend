@@ -1,7 +1,7 @@
 <template>
   <q-layout view="lHh Lpr lFf">
     <q-header elevated>
-      <q-toolbar style="background-color: #9c615c">
+      <q-toolbar class="primary">
         <q-toolbar-title>
           <q-img
             src="../../../assets/homerchant-logo.png"
@@ -78,7 +78,6 @@ const toggleLeftDrawer = () => leftDrawerOpen.value = !leftDrawerOpen.value
 <style scoped>
 .bg-auth {
   backgroud-color: #F0F4F3;
-  background-image: url("src/assets/login/bg-auth.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;

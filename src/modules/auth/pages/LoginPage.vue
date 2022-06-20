@@ -32,7 +32,7 @@
         <div>
           <q-btn
             class="full-width fredoka"
-            color="primary"
+            color="red"
             label="Sign in"
             rounded
             type="submit"

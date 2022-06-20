@@ -2,12 +2,12 @@
   <q-page padding>
     <!-- content -->
     About page content
+    <AddProduct />
   </q-page>
 </template>
 
-<script lang="ts">
+<script setup>
 import { defineComponent } from 'vue'
-export default defineComponent({
-  // name: 'PageName'
-})
+import AddProduct from '../components/AddProduct.vue'
+
 </script>

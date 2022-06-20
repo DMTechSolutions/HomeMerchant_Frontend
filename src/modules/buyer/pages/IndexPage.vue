@@ -1,16 +1,14 @@
 <template>
   <q-page class="q-pa-sm">
+
     <div class="images">
       <FeedCompo page="sofa" />
     </div>
-    <FloatingButton />
+    <AddProduct />
   </q-page>
 </template>
 
-<script>
+<script setup>
   import FeedCompo from '../../../components/Feed.vue'
-  import FloatingButton from '../../../components/FloatingButton.vue'
-  export default {
-    components: { FloatingButton, FeedCompo },
-  }
+  import AddProduct from '../../../components/FloatingButton.vue'
 </script>

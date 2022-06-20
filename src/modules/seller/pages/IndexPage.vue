@@ -3,39 +3,20 @@
     <div class="images">
       <FeedCompo page="japan" />
     </div>
-    <FloatingButton clicked="addProduct" />
-    <div v-if="addProduct">
-      <AddProduct prompt="addProduct" />
-    </div>
+      <AddProduct />
   </q-page>
 </template>
 
-<script>
-import {useAuthStore} from 'src/stores/all.js'
-import {computed} from "vue";
+<script setup>
+import { useAuthStore } from 'src/stores/all.js'
+import { computed, ref } from "vue";
 import FeedCompo from '../../../components/Feed.vue'
-import FloatingButton from '../../../components/FloatingButton.vue'
+import AddProduct from '../../../components/AddProduct.vue'
 
 const authStore = useAuthStore()
 
 const userToken = computed(() => authStore.getUserToken)
 
-// This request is to be intercepted when the token is invalid
-authStore.GET_USER(userToken.value.access)
-  export default {
-  data() {
-    return {
-      addProduct: false,
-    }
-  },
-    methods: {
-      onClick () {
-        this.addProduct = true
-        alert("clicked --> " + this.addProduct)
-      }
-    },
-    components: { FloatingButton, FeedCompo }
-  }
 </script>
 
 <style>
@@ -43,4 +24,5 @@ authStore.GET_USER(userToken.value.access)
     width: 99%;
     margin: auto;
   }
+
 </style>
