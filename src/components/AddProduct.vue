@@ -49,7 +49,7 @@ const optionModel = ref(null)
 const options = ['Buyer', 'Sellr']
 
 const upload = () => {
-  alert('cliked');
+  alert('cliked');  
 }
 
 console.log('model ' + model.value);

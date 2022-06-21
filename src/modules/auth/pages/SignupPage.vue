@@ -1,14 +1,26 @@
 <template>
   <div class="fit row wrap justify-center items-center content-center q-pl-sm q-pr-sm">
       <div class="col-12 col-sm-12 col-md-8 col-lg-6 col-xl-4" style="max-width: 480px;">
-        <div class="row q-pa-sm-sm q-pa-md">
+        <div class="row q-pa-sm-sm q-pa-md q-pt-0">
           <div class="col-12">
             <q-card-section>
               <div class="q-mb-xl">
                 <div class="flex justify-center">
                   <div class="text-h4 no-caps q-my-none text-weight-bold text-primary fredoka"
                   >
-                    Sign Up
+                     <q-img
+                        src="../../../assets/homerchant-logo.png"
+                        style="height: 80px; width: 80px"
+                      />
+                  </div>
+                  <div class="column">
+                    <div class="label">
+                      <label class="label">Join us to start searching for quality products</label>
+                    </div>
+                    <div class="row justify-between q-mt-md">
+                      <q-btn color="red-2" icon="google" class="text-black" rounded text-color="black" label="Google" no-caps />
+                      <q-btn color="red-2" icon="facebook" rounded text-color="black" label="Facebook" no-caps />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -53,16 +65,22 @@
                   v-bind="$input"
                   v-model="user.profile"
                 />
+                <div class="q-gutter-lg q-mt-xs q-pl-xs">
+                    <q-checkbox v-model="agree" label="I agree with terms and privacy policy" />
+                  </div>
                 <div>
-                  <q-btn
+                  <div class="q-gutter-sm">
+                    <q-btn
                     class="full-width fredoka q-mt-lg"
                     color="primary"
-                    label="Register"
+                    label="Join us"
                     rounded
                     no-caps
                     type="submit"
-                  ></q-btn>
+                  />
                   <CancelBtn />
+                  </div>
+
                 </div>
               </q-form>
             </q-card-section>
@@ -91,6 +109,8 @@ const options = [{ label: 'Seller', value: 'seller' }, { label: 'Buyer', value: 
 
 const loading = computed(() => $commonStore.isLoading);
 
+const agree = ref(false);
+
 const submitForm = async () => {
   try {
     $commonStore.ADD_REQUEST();
@@ -109,3 +129,10 @@ const submitForm = async () => {
 };
 </script>
 
+<style>
+  .label {
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+  }
+</style>
